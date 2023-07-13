@@ -55,10 +55,14 @@ namespace Lesson17
             }
             Console.WriteLine("Ваш вклад с процентами составляет: " + total + " руб.");
         }
-        public static int GetBanknotesQuantity(int thousand = 1000, int fiveHundred = 500, int oneHundred = 100)
+        public static int GetBanknotesQuantity(int money, int thousand = 1000, int fiveHundred = 500, int oneHundred = 100)
         {
-            Console.WriteLine("Укажите сумму, которую хотите снять");
-            int money = Convert.ToInt32(Console.ReadLine());
+            if (money < 0)
+            {
+                Console.WriteLine("Ошибка. Введите положительное число.");
+                return 0;
+            }
+
             int banknoteTh = money / thousand;
             int tmpTh = money - (thousand * banknoteTh);
             int banknoteFh = tmpTh / fiveHundred;
