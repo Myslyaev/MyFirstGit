@@ -57,7 +57,7 @@ namespace Lesson17
         }
         public static int GetBanknotesQuantity(int money, int thousand = 1000, int fiveHundred = 500, int oneHundred = 100)
         {
-            if (money < 0)
+            if (money <= 0)
             {
                 Console.WriteLine("Ошибка. Введите положительное число.");
                 return 0;
