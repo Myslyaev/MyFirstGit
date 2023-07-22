@@ -31,16 +31,14 @@ namespace Lesson17
                 Console.WriteLine($"{name}, вам не доступны акционные предложения.");
             }
         }
-        public static void CalculateDepositPercents()
+        public static int GetDepositPercents(int dep, int year, int perc, int total = 0, int profit = 0)
         {
-            Console.WriteLine("Укажите размер первоначального вклада");
-            int dep = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Укажите срок вклада в годах");
-            int year = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Укажите процент вклада");
-            int perc = Convert.ToInt32(Console.ReadLine());
-            int profit = 0;
-            int total = 0;
+
+            if (dep < 0 || year < 0 || perc < 0)
+            {
+                Console.WriteLine("Ошибка. Введите положительное число.");
+                return 0;
+            }
             for (int i = 1; i <= year; i++)
             {
                 if (i == 1)
@@ -53,7 +51,7 @@ namespace Lesson17
                 profit = dep / 100 * perc;
                 total = dep + profit;
             }
-            Console.WriteLine("Ваш вклад с процентами составляет: " + total + " руб.");
+            return total;
         }
         public static int GetBanknotesQuantity(int money, int thousand = 1000, int fiveHundred = 500, int oneHundred = 100)
         {
