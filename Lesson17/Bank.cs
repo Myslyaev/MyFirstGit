@@ -33,11 +33,9 @@ namespace Lesson17
         }
         public static int GetDepositPercents(int dep, int year, int perc, int total = 0, int profit = 0)
         {
-
             if (dep < 0 || year < 0 || perc < 0)
             {
-                Console.WriteLine("Ошибка. Введите положительное число.");
-                return 0;
+                throw new ArgumentException("dep < 0 || year < 0 || perc < 0");
             }
             for (int i = 1; i <= year; i++)
             {
@@ -55,12 +53,14 @@ namespace Lesson17
         }
         public static int GetBanknotesQuantity(int money, int thousand = 1000, int fiveHundred = 500, int oneHundred = 100)
         {
-            if (money <= 0)
+            if (money == 0)
             {
-                Console.WriteLine("Ошибка. Введите положительное число.");
-                return 0;
+                throw new ArgumentException("money == 0");
             }
-
+            if (money < 0)
+            {
+                throw new ArgumentException("money < 0");
+            }
             int banknoteTh = money / thousand;
             int tmpTh = money - (thousand * banknoteTh);
             int banknoteFh = tmpTh / fiveHundred;
@@ -71,4 +71,3 @@ namespace Lesson17
         }
     }
 }
-
