@@ -1,19 +1,23 @@
-﻿string number;
-Console.WriteLine("Введите количество сотрудников");
-int quantity = Convert.ToInt32(Console.ReadLine());
-int[] rating = new int[quantity];
-int i = 0;
+﻿Console.WriteLine("Введите количество сотрудников");
+int employeesCount = Convert.ToInt32(Console.ReadLine());
+
 Console.WriteLine("Введите рейтинг сотрудника по одному, в конце напишите слово: конец");
-while ((number = Console.ReadLine()) != "конец")
+
+int i = 0;
+int[] ratingArr = new int[employeesCount];
+string rating;
+while ((rating = Console.ReadLine()) != "конец")
 {
-    rating[i++] = Convert.ToInt32(number);
+    ratingArr[i++] = Convert.ToInt32(rating);
 }
-int max = rating[0];
-for (int n = 1; n < rating.Length; n++)
+
+int max = ratingArr[0];
+for (i = 1; i < ratingArr.Length; i++)
 {
-    if (max < rating[n])
+    if (max < ratingArr[i])
     {
-        max = rating[n];
+        max = ratingArr[i];
     }
 }
+
 Console.WriteLine($"Самый высокий рейтинг: {max}");

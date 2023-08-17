@@ -11,43 +11,45 @@ namespace Lesson21
         public static int ReadMenuQuantity()
         {
             Console.WriteLine("Введите количество блюд");
-            int quantity = Convert.ToInt32(Console.ReadLine());
-            return quantity;
+
+            int numberOfDishes = Convert.ToInt32(Console.ReadLine());
+            return numberOfDishes;
         }
-        public static int[] ReadOrdersQuantity(int[] ordersQuantity)
+        public static int[] ReadOrdersQuantity(int[] ordersQuantityArr)
         {
-            int i = 0;
             Console.WriteLine("Введите количество заказов блюд по одному, в конце напишите слово: конец");
-            string number;
-            while ((number = Console.ReadLine()) != "конец")
+
+            int i = 0;
+            string ordersQuantity;
+            while ((ordersQuantity = Console.ReadLine()) != "конец")
             {
-                ordersQuantity[i++] = Convert.ToInt32(number);
+                ordersQuantityArr[i++] = Convert.ToInt32(ordersQuantity);
             }
-            return ordersQuantity;
+            return ordersQuantityArr;
         }
-        public static int[] SortOrdersQuantity(int[] ordersQuantity)
+        public static int[] SortOrdersQuantity(int[] ordersQuantityArr)
         {
-            for (int i = 0; i < ordersQuantity.Length - 1; i++)
+            for (int i = 0; i < ordersQuantityArr.Length - 1; i++)
             {
                 int minIndex = i;
-                for (int j = i; j < ordersQuantity.Length; j++)
+                for (int j = i; j < ordersQuantityArr.Length; j++)
                 {
-                    if (ordersQuantity[minIndex] < ordersQuantity[j])
+                    if (ordersQuantityArr[minIndex] < ordersQuantityArr[j])
                     {
                         minIndex = j;
                     }
                 }
-                int tmp = ordersQuantity[minIndex];
-                ordersQuantity[minIndex] = ordersQuantity[i];
-                ordersQuantity[i] = tmp;
+                int tmp = ordersQuantityArr[minIndex];
+                ordersQuantityArr[minIndex] = ordersQuantityArr[i];
+                ordersQuantityArr[i] = tmp;
             }
-            return ordersQuantity;
+            return ordersQuantityArr;
         }
-        public static void WriteOrdersQuantity(int[] ordersQuantity)
+        public static void WriteOrdersQuantity(int[] ordersQuantityArr)
         {
-            for (int i = 0; i < ordersQuantity.Length; i++)
+            for (int i = 0; i < ordersQuantityArr.Length; i++)
             {
-                Console.Write($"{ordersQuantity[i]} ");
+                Console.Write($"{ordersQuantityArr[i]} ");
             }
         }
     }
