@@ -1,17 +1,22 @@
-﻿Console.WriteLine("Введите количество товаров");
-int productsNumber = Convert.ToInt32(Console.ReadLine());
+﻿GetAndWritePrice();
 
-Console.WriteLine("Введите закупочную цену товара по одному, в конце напишите слово: конец");
-
-double[] prices = new double[productsNumber];
-int i = 0;
-string price;
-while ((price = Console.ReadLine()) != "конец")
+static void GetAndWritePrice()
 {
-    prices[i++] = Convert.ToInt32(price);
-}
+    Console.WriteLine("Введите количество товаров");
+    int productsNumber = Convert.ToInt32(Console.ReadLine());
 
-for (i = 0; i < prices.Length; i++)
-{
-    Console.WriteLine($"Цена с наценкой: {prices[i] + prices[i] / 100 * 18}");
+    Console.WriteLine("Введите закупочную цену товара по одному, в конце напишите слово: конец");
+
+    double[] prices = new double[productsNumber];
+    int i = 0;
+    string price;
+    while ((price = Console.ReadLine()) != "конец")
+    {
+        prices[i++] = Convert.ToInt32(price);
+    }
+
+    for (i = 0; i < prices.Length; i++)
+    {
+        Console.WriteLine($"Цена с наценкой: {prices[i] + prices[i] / 100 * 18}");
+    }
 }
