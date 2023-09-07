@@ -13,9 +13,9 @@ namespace Lesson27
         public int Age { get; set; }
         public int Area { get; set; }
         public string Biom { get; set; }
-        public string Food { get; private set; }
         public string Sound { get; private set; }
 
+        public string _food;
         private const string _foodEleph = "Рыба";
         private const string _soundEleph = "Ауф";
         private const string _foodPeng = "Мясо, сено";
@@ -32,23 +32,36 @@ namespace Lesson27
             Biom = biom;
             if (title == "Слон")
             {
-                Food = _foodEleph;
                 Sound = _soundEleph;
             }
             if (title == "Пингвин")
             {
-                Food = _foodPeng;
                 Sound = _soundPeng;
             }
             if (title == "Тигр")
             {
-                Food = _foodTiger;
                 Sound = _soundTiger;
             }
         }
-        public void DoEat()
+        public string GetFoodType(string title, string food)
         {
-            Console.WriteLine($"{Title} {Name} съел {Food}");
+            if (title == "Слон")
+            {
+                food = _foodEleph;
+            }
+            if (title == "Пингвин")
+            {
+                food = _foodPeng;
+            }
+            if (title == "Тигр")
+            {
+                food = _foodTiger;
+            }
+            return food;
+        }
+        public void DoEat(string food)
+        {
+            Console.WriteLine($"{Title} {Name} съел {food}");
         }
         public void DoVoice()
         {
