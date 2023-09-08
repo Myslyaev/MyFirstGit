@@ -1,26 +1,26 @@
 ﻿using Lesson27;
-Animal animal = new Animal("Петя", "Слон", 5, 10, "Тропики");
-string food = animal._food;
-string title = animal.Title;
-food= animal.GetFoodType(title, food);
-animal.DoEat(food);
-animal.DoVoice();
-animal.DoGame();
+Animal firstAnimal = new Animal("Петя", "Слон", 5, 10, "Тропики");
+string food = firstAnimal._food;
+string title = firstAnimal.Title;
+food = firstAnimal.GetFoodType(title, food);
+firstAnimal.DoEat(food);
+firstAnimal.DoVoice();
+firstAnimal.DoGame();
 
 Console.WriteLine();
 
-animal = new Animal("Симба", "Пингвин", 1, 10, "Тундра");
-title = animal.Title;
-food = animal.GetFoodType(title, food);
-animal.DoEat(food);
-animal.DoVoice();
-animal.DoGame();
+Animal secAnimal = new Animal("Симба", "Пингвин", 1, 10, "Тундра");
+title = secAnimal.Title;
+food = secAnimal.GetFoodType(title, food);
+secAnimal.DoEat(food);
+secAnimal.DoVoice();
+secAnimal.DoGame();
 
 Console.WriteLine();
 
-animal = new Animal("Матильда", "Тигр", 20, 10, "Пустыня");
-title = animal.Title;
-food = animal.GetFoodType(title, food);
-animal.DoEat(food);
-animal.DoVoice();
-animal.DoGame();
+Animal thirdAnimal = new Animal("Матильда", "Тигр", 20, 10, "Пустыня");
+title = thirdAnimal.Title;
+food = thirdAnimal.GetFoodType(title, food);
+thirdAnimal.DoEat(food);
+thirdAnimal.DoVoice();
+thirdAnimal.DoGame();
