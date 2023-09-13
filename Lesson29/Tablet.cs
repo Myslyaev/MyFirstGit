@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Lesson29
 {
-    public class Tablet : Smartphone
+    public class Tablet : BaseProduct
     {
+        public int Camera { get; set; }
         public string Stylus { get; set; }
-        public Tablet(string title, string manufacturer, int memory, int display, int price, int camera, string stylus) : base(title, manufacturer, memory, display, price, camera)
+        public Tablet(string title, string manufacturer, int memory, int display, int price, int camera, string stylus) : base(title, manufacturer, memory, display, price)
         {
+            Camera = camera;
             Stylus = stylus;
         }
         public override void ShowOptPrice()
