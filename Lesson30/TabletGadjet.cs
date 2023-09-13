@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lesson30
+﻿namespace Lesson30
 {
     public class TabletGadjet : AbstractGadjet
     {
@@ -21,6 +14,7 @@ namespace Lesson30
             Camera = camera;
             Stylus = stylus;
         }
+
         public override void ShowOptPrice()
         {
             Console.WriteLine("Введите количество товара");

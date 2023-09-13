@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lesson29
+﻿namespace Lesson29
 {
     public class BaseProduct
     {
@@ -26,11 +19,13 @@ namespace Lesson29
         {
             Console.WriteLine($"{Title} {Manufacturer}: {Price} руб.");
         }
+
         public override bool Equals(object? obj)
         {
             return obj is BaseProduct product &&
                    Title == product.Title;
         }
+
         public virtual void ShowOptPrice()
         {
             Console.WriteLine("Введите количество товара");

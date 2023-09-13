@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lesson29
+﻿namespace Lesson29
 {
     public class Tablet : BaseProduct
     {
@@ -15,6 +9,7 @@ namespace Lesson29
             Camera = camera;
             Stylus = stylus;
         }
+
         public override void ShowOptPrice()
         {
             Console.WriteLine("Введите количество товара");
