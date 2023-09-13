@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Lesson29
 {
-    public class Notebook : Tablet
+    public class Notebook : Smartphone
     {
         public int Battery { get; set; }
-        public Notebook(string title, string manufacturer, int memory, int display, int price, int camera, string stylus, int battery) : base(title, manufacturer, memory, display, price, camera, stylus)
+        public Notebook(string title, string manufacturer, int memory, int display, int price, int camera, int battery) : base(title, manufacturer, memory, display, price, camera)
         {
             Battery = battery;
         }

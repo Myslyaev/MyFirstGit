@@ -10,6 +10,6 @@ tablet.WriteShortInfo();
 tablet.ShowOptPrice();
 
 Console.WriteLine();
-Notebook notebook = new Notebook("Macbook", "Apple", 1000, 16, 95000, 10, "да", 24);
+Notebook notebook = new Notebook("Macbook", "Apple", 1000, 16, 95000, 10, 24);
 notebook.WriteShortInfo();
 notebook.ShowOptPrice();
