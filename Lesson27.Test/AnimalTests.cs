@@ -8,8 +8,15 @@ namespace Lesson27.Test
         [TestCase("Тигр", "", "Мясо")]
         public void GetFoodTypeTest (string title, string food, string expected) 
         {
-            string actual = Animal.GetFoodType(title, food);
+            Animal someAnimal = new Animal("Петя", "Слон", 5, 10, "Тропики");
+            string actual = someAnimal.GetFoodType(title, food);
             Assert.AreEqual(expected, actual);
+        }
+        public void GetFoodTypeTest_WhenTitleIsNotTrue_ShouldArgumentException()
+        {
+            Animal someAnimal = new Animal("Петя", "Жираф", 5, 10, "Тропики");
+            string title = "";
+            Assert.Throws<ArgumentException>(() => someAnimal.GetFoodType(title));
         }
     }
 }

@@ -8,21 +8,19 @@ namespace Lesson27
 {
     public class Animal
     {
-        public string Name { get; set; }
-        public string Title { get; set; }
-        public int Age { get; set; }
-        public int Area { get; set; }
-        public string Biom { get; set; }
-        public string Sound { get; private set; }
-
-        public string _food;
         private const string _foodEleph = "Рыба";
         private const string _soundEleph = "Ауф";
         private const string _foodPeng = "Мясо, сено";
         private const string _soundPeng = "Хрю";
         private const string _foodTiger = "Мясо";
         private const string _soundTiger = "Рррр";
-
+        public string _food;
+        public string Name { get; set; }
+        public string Title { get; set; }
+        public int Age { get; set; }
+        public int Area { get; set; }
+        public string Biom { get; set; }
+        public string Sound { get; private set; }
         public Animal(string name, string title, int age, int area, string biom)
         {
             Name = name;
@@ -43,8 +41,12 @@ namespace Lesson27
                 Sound = _soundTiger;
             }
         }
-        public string GetFoodType(string title, string food)
+        public string GetFoodType(string title, string food="")
         {
+            if (title != "Слон" && title != "Пингвин" && title != "Тигр")
+            {
+                throw new ArgumentException("Неправильный вид животного");
+            }
             if (title == "Слон")
             {
                 food = _foodEleph;
@@ -57,6 +59,7 @@ namespace Lesson27
             {
                 food = _foodTiger;
             }
+            
             return food;
         }
         public void DoEat(string food)
